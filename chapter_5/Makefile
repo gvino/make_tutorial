@@ -24,4 +24,4 @@ hellomake: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 clean:
-	rm -f $(ODIR)/*.o $(SDIR)/*~ $(INCDIR)/*~
+	rm -f $(ODIR)/*.o $(SDIR)/*~ $(IDIR)/*~

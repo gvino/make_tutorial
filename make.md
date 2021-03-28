@@ -159,7 +159,7 @@ hellomake: $(OBJ)
     $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 clean:
-    rm -f $(ODIR)/*.o $(SDIR)/*~ $(INCDIR)/*~
+    rm -f $(ODIR)/*.o $(SDIR)/*~ $(IDIR)/*~
 ```
 
 Структура файлов проекта в этом случае будет следующей:
@@ -211,7 +211,7 @@ $(BIN): $(OBJ)
     $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 clean:
-    rm -f $(ODIR)/*.o $(SDIR)/*~ $(INCDIR)/*~
+    rm -f $(ODIR)/*.o $(SDIR)/*~ $(IDIR)/*~
 ```
 
 ## Заключение
