@@ -150,13 +150,13 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = hellomake.o hellofunc.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
+.PHONY: clean
+
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
     $(CC) -c -o $@ $< $(CFLAGS)
 
 hellomake: $(OBJ)
     $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-
-.PHONY: clean
 
 clean:
     rm -f $(ODIR)/*.o $(SDIR)/*~ $(INCDIR)/*~
@@ -200,6 +200,8 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = hellomake.o hellofunc.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
+.PHONY: all clean
+
 all: $(BIN)
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
@@ -207,8 +209,6 @@ $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 
 $(BIN): $(OBJ)
     $(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-
-.PHONY: clean
 
 clean:
     rm -f $(ODIR)/*.o $(SDIR)/*~ $(INCDIR)/*~
